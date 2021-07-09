@@ -1,7 +1,7 @@
 <template>
   <div class="header-nav">
     <div class="nav-title">
-      <img class="nav-logo" src="@/assets/images/logo.png" alt="logo" />
+      <!-- <img class="nav-logo" src="@/assets/images/logo.png" alt="logo" /> -->
       MY UI
     </div>
     <div class="nav-content">
@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="nav-end">
-        <div v-for="i in navRightList" :key="i.label" class="nav-item" :class="{ 'nav-link': i.link !== '#' }">
+        <div v-for="i in navRightList" :key="i.label" class="nav-item" :class="{ 'nav-link': i.link !== '#' }" @click="changeNav(i.link, 'link')">
           {{ i.label }}
         </div>
       </div>
@@ -48,11 +48,11 @@ class Header extends Vue {
   navRightList = [
     {
       label: '中文',
-      link: ''
+      link: '#'
     },
     {
       label: 'github',
-      link: ''
+      link: 'https://github.com/Linliangtao/MY-UI'
     },
     {
       label: version,
@@ -60,10 +60,14 @@ class Header extends Vue {
     }
   ]
 
-  created() {}
-
-  changeNav(route) {
-    this.$router.push({ name: route })
+  changeNav(route, type = 'route') {
+    if (type === 'route') {
+      this.$router.push({ name: route })
+    } else {
+      if (route !== '#') {
+        window.open(route)
+      }
+    }
   }
 }
 export default Header

@@ -1,8 +1,10 @@
 <template>
-  <div class="home">
+  <div class="module">
     <Header activeType="module" />
     <div class="content">
       <h1>组 件</h1>
+      <CodePer />
+      <Attr />
     </div>
   </div>
 </template>
@@ -19,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/style.scss';
 
-.home {
+.module {
   .content {
     @include set-flex($direction: column, $justify: center);
     @include set-size($height: calc(100vh - 64px));

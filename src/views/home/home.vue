@@ -2,20 +2,18 @@
   <div class="home">
     <Header />
     <div class="content">
-      <h1>MY UI</h1>
-      <!-- <p style="font-size: 16px; margin-top: 10px; margin-bottom: 0">一个 Vue 3 组件库</p> -->
-      <!-- <p>比较完整，使用 TypeScript，造轮子系列</p> -->
-      <!-- <p style="font-size: 16px; margin-top: 0">犀利有才，有点意思</p> -->
-      <!-- <div>
-                <button type="default" size="large" style="margin-right: 12px">换个主题</button>
-                <button type="primary" size="large">开始使用</button>
-            </div> -->
+      <particle></particle>
+      <div class="content-main">
+        <h1>MY UI</h1>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import particle from '@/base/particle/particle.vue'
 export default {
+  components: { particle },
   data() {
     return {}
   },
@@ -30,11 +28,18 @@ export default {
   .content {
     @include set-flex($direction: column, $justify: center);
     @include set-size($height: calc(100vh - 64px));
-    position: relative;
     text-align: center;
+    z-index: 10;
 
-    h1 {
-      font-size: 54px;
+    .content-main {
+      @include set-flex($justify: center);
+      @include set-size($width: 100%);
+      position: absolute;
+      z-index: 10;
+
+      h1 {
+        font-size: 75px;
+      }
     }
   }
 
