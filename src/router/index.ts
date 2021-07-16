@@ -14,13 +14,32 @@ const routes: Array<RouteConfig> = [
     path: "/doc",
     name: "doc",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/doc/doc.vue"),
+      import(/* webpackChunkName: "doc" */ "../views/doc/doc.vue"),
   },
   {
     path: "/module",
     name: "module",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/module/module.vue"),
+    redirect: {
+      name: 'avatar'
+    },
+    component: () => import(/* webpackChunkName: "module" */ "../views/module/module.vue"),
+    children: [
+      {
+        name: 'template',
+        path: 'template',
+        component: () => import(/* webpackChunkName: "button" */ "../views/demos/module/template.vue")
+      },
+      {
+        name: 'avatar',
+        path: 'avatar',
+        component: () => import(/* webpackChunkName: "button" */ "../views/demos/module/avatar.vue")
+      },
+      {
+        name: 'button',
+        path: 'button',
+        component: () => import(/* webpackChunkName: "button" */ "../views/demos/module/button.vue")
+      }
+    ]
   }
 ]
 

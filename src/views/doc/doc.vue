@@ -1,16 +1,17 @@
 <template>
   <div class="home">
     <Header activeType="doc" />
-    <div class="content">
-      <h1>文档</h1>
-    </div>
+    <B-Layout :list="menuList" />
   </div>
 </template>
 
 <script>
+import menuList from '@/config/doc'
 export default {
   data() {
-    return {}
+    return {
+      menuList: menuList
+    }
   },
   methods: {}
 }

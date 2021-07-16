@@ -104,7 +104,7 @@ export default Header
     font-size: 18px;
     font-weight: 500;
     text-align: left;
-    margin-left: 40px;
+    margin-left: 32px;
     color: $color-default;
     cursor: pointer;
 

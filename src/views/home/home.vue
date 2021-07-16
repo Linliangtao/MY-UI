@@ -39,6 +39,7 @@ export default {
 
       h1 {
         font-size: 75px;
+        cursor: pointer;
       }
     }
   }

@@ -1,18 +1,17 @@
 <template>
   <div class="module">
     <Header activeType="module" />
-    <div class="content">
-      <h1>组 件</h1>
-      <CodePer />
-      <Attr />
-    </div>
+    <B-Layout :list="menuList" />
   </div>
 </template>
 
 <script>
+import menuList from '@/config/component'
 export default {
   data() {
-    return {}
+    return {
+      menuList: menuList
+    }
   },
   methods: {}
 }
@@ -20,22 +19,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/style.scss';
-
-.module {
-  .content {
-    @include set-flex($direction: column, $justify: center);
-    @include set-size($height: calc(100vh - 64px));
-    position: relative;
-    text-align: center;
-
-    h1 {
-      font-size: 54px;
-    }
-  }
-
-  .content::after {
-    @include set-size($height: 64px);
-    content: '';
-  }
-}
 </style>

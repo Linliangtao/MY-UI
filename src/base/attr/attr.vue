@@ -33,28 +33,23 @@ class Attr extends Vue {
   headerColumn = [
     {
       title: '参数',
-      dataIndex: 'params',
-      key: 'age'
+      dataIndex: 'params'
     },
     {
       title: '说明',
-      dataIndex: 'desc',
-      key: 'age'
+      dataIndex: 'desc'
     },
     {
       title: '类型',
-      dataIndex: 'type',
-      key: 'age'
+      dataIndex: 'type'
     },
     {
       title: '可选值',
-      dataIndex: 'select',
-      key: 'age'
+      dataIndex: 'select'
     },
     {
       title: '默认值',
-      dataIndex: 'default',
-      key: 'age'
+      dataIndex: 'default'
     }
   ]
 
@@ -65,6 +60,13 @@ class Attr extends Vue {
       type: 'boolean',
       select: 'false / true',
       default: 'false'
+    },
+    {
+      params: 'title',
+      desc: '标题',
+      type: 'string',
+      select: '——',
+      default: '——'
     }
   ]
 }
@@ -75,9 +77,8 @@ export default Attr
 @import '@/assets/scss/style.scss';
 
 .attr {
-  width: 40%;
+  width: 100%;
   overflow-x: auto;
-  margin: 0 auto;
 
   h2 {
     font-weight: 400;
@@ -94,6 +95,7 @@ export default Attr
     font-size: 14px;
     margin-bottom: 45px;
     line-height: 1.5em;
+    text-align: left;
   }
 
   .attr-title {
