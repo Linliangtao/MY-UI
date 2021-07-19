@@ -1,14 +1,11 @@
-import Vue from "vue"
-import VueRouter, { RouteConfig } from "vue-router"
-import Home from "../views/home/home.vue"
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-Vue.use(VueRouter);
-
-const routes: Array<RouteConfig> = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: () =>
+      import(/* webpackChunkName: "home" */ "../views/home/home.vue"),
   },
   {
     path: "/doc",
@@ -43,10 +40,9 @@ const routes: Array<RouteConfig> = [
   }
 ]
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
 })
 
 export default router

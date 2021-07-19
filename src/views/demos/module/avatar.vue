@@ -4,6 +4,7 @@
     <div class="message-desc">在互联网上，长的帅是可以当饭吃的。</div>
     <div class="message-demo">演示</div>
     <div class="message-content">
+      <avatar />
       <CodePer />
       <CodePer />
       <CodePer />
@@ -15,7 +16,12 @@
 </template>
 
 <script>
-export default {}
+import avatar from '@/components/i-avatar/i-avatar.tsx'
+export default {
+  components: {
+    avatar
+  }
+}
 </script>
 
 <style lang="scss" scoped>

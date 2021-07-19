@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <div class="content">
-      <particle></particle>
+      <Particle></Particle>
       <div class="content-main">
         <h1>MY UI</h1>
       </div>
@@ -10,15 +10,10 @@
   </div>
 </template>
 
-<script>
-import particle from '@/base/particle/particle.vue'
-export default {
-  components: { particle },
-  data() {
-    return {}
-  },
-  methods: {}
-}
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({})
 </script>
 
 <style lang="scss" scoped>
